@@ -7,4 +7,6 @@ class Posts(models.Model):
     text : models.TextField
     author : models.ForeignKey(get_user_model(), null=True, on_delete=models.CASCADE,)
     created_date : models.DateTimeField('date published') 
-    published_date : models.DateTimeField('date published') 
+    published_date : models.DateTimeField('date published')
+    def __str__(self):
+        return self.title
